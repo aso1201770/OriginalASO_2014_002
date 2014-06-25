@@ -47,6 +47,7 @@ public class MainActivity extends Activity implements View.OnClickListener{
 			intent = new Intent(MainActivity.this,MaintenanceActivity.class);
 			//次画面のアクティビティ起動
 			startActivity(intent);
+			break;
 			
 		case R.id.btnCHECK://一言チェックボタンが押された
 			
