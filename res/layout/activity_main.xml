@@ -9,7 +9,7 @@
     tools:context=".MainActivity" >
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/btnMAINTE_BACK"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
@@ -49,14 +49,14 @@
         android:id="@+id/btnCHECK"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/btnMAINTE"
+        android:layout_alignLeft="@+id/btnDELETE"
         android:layout_alignRight="@+id/btnENTRY"
-        android:layout_below="@+id/btnMAINTE"
+        android:layout_below="@+id/btnDELETE"
         android:layout_marginTop="48dp"
         android:text="一言チェック" />
 
     <Button
-        android:id="@+id/btnMAINTE"
+        android:id="@+id/btnDELETE"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerVertical="true"

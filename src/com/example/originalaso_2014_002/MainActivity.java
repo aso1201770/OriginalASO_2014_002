@@ -41,7 +41,7 @@ public class MainActivity extends Activity implements View.OnClickListener{
 			//入力欄をクリア
 			etv.setText("");
 			break;
-		case R.id.btnMAINTE://メンテボタンが押された
+		case R.id.btnDELETE://メンテボタンが押された
 			
 			//インテントのインスタンス生成
 			intent = new Intent(MainActivity.this,MaintenanceActivity.class);
@@ -93,7 +93,7 @@ public class MainActivity extends Activity implements View.OnClickListener{
     	btnENTRY.setOnClickListener(this);
     	
     	//メンテボタン変数にリスナーを登録する
-    	Button btnMAINTE = (Button)findViewById(R.id.btnMAINTE);
+    	Button btnMAINTE = (Button)findViewById(R.id.btnDELETE);
     	btnMAINTE.setOnClickListener(this);
     	
     	//　一言チェックボタン変数にリスナーを登録する
