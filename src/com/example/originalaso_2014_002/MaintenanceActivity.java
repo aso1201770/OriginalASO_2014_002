@@ -52,12 +52,29 @@ public class MaintenanceActivity extends Activity implements
 		btnDelete.setOnClickListener(this);
 		btnMainte_Back.setOnClickListener(this);
 		
-		//各ButtonにOnclickListenerをセット
-		btnDelete.setOnClickListener(this);
-		btnMainte_Back.setOnClickListener(this);
+        // ListViewにOnItemClickListenerをセット
+		lstHitokoto.setOnItemClickListener(this);
 		
 		//ListViewにDBの値をセット
 		this.setDBValuetoList(lstHitokoto);
+	}
+	/**
+	 * Hitokotoテーブルから、引数で指定した「_id」と同じ値を持つレコードを削除
+	 * @param id 指定する値
+	 */
+	private void deleteFromHitokoto(int id){
+		// クラスのフィールド変数がＮＵＬＬなら、データベース空間オープン
+		if(sdb == null) {
+			helper = new MySQLiteOpenHelper(getApplicationContext());
+		}
+		try{
+			sdb = helper.getWritableDatabase();
+		}catch(SQLiteException e){
+			//異常終了
+			Log.e("ERROR",e.toString());
+		}
+		//MySQLiteOpenHelperにDELETE文を実行させる
+		this.helper.deleteHitokoto(sdb, id);
 	}
 
 	@Override
@@ -144,8 +161,6 @@ public class MaintenanceActivity extends Activity implements
 		
 		//アダプターを設定します
 		lstHitokoto.setAdapter(adapter);
-		
-		//
 			
 		}
 		
